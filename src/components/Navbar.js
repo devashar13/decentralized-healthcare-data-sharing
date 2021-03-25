@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
-import Identicon from 'identicon.js';
-import dvideo from '../dvideo.png'
+import React, { Component } from "react";
+import Identicon from "identicon.js";
+import dvideo from "../dvideo.png";
 
-const Navbar = () => {
+const Navbar = ({ account }) => {
   return (
     <div>
-            <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow text-monospace">
+      <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow text-monospace">
         <a
           className="navbar-brand col-sm-3 col-md-2 mr-0"
           href="http://www.dappuniversity.com/bootcamp"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={dvideo} width="30" height="30" className="d-inline-block align-top" alt="" />
+          <img
+            src={dvideo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt=""
+          />
           &nbsp;DVide0
         </a>
         <ul className="navbar-nav px-3">
@@ -20,13 +26,25 @@ const Navbar = () => {
             <small className="text-secondary">
               <small id="account">{/* Account... */}</small>
             </small>
-              {/* Return Account&Identicon... */}
-              <b className="text-white">0x0</b>
+            {/* Return Account&Identicon... */}
+            {
+              account?
+              <img 
+              className="ml-2 mx-2"
+              width="30"
+              height="30"
+              src={`data:image/png;base64,${new Identicon(account,30).toString()}`}
+              />:
+              <span></span>
+                        
+            }
+            <b className="text-white">{account}</b>
+            
           </li>
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
