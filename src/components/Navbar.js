@@ -4,24 +4,13 @@ import dvideo from "../dvideo.png";
 
 const Navbar = ({ account }) => {
   return (
-    <div>
-      <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow text-monospace">
-        <a
-          className="navbar-brand col-sm-3 col-md-2 mr-0"
-          href="http://www.dappuniversity.com/bootcamp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={dvideo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt=""
-          />
-          &nbsp;DVide0
-        </a>
-        <ul className="navbar-nav px-3">
+    <div className="Navbar">
+      <div class="navbar-home d-flex justify-content-between align-items-center p-1">
+         <div class="d-flex justify-content-center align-items-center">
+           <img src="" alt="hello"></img>
+           <h5>youtube</h5>
+         </div>
+         <ul className="navbar-nav px-3">
           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
             <small className="text-secondary">
               <small id="account">{/* Account... */}</small>
@@ -42,7 +31,9 @@ const Navbar = ({ account }) => {
             
           </li>
         </ul>
-      </nav>
+      </div>
+      
+      
     </div>
   );
 };
