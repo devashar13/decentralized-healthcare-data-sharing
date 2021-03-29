@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Identicon from "identicon.js";
-import dvideo from "../dvideo.png";
+import dvideo from "../logo1.png";
 
 const Navbar = ({ account }) => {
   return (
     <div className="Navbar">
       <div class="navbar-home d-flex justify-content-between align-items-center p-1">
          <div class="d-flex justify-content-center align-items-center">
-           <img src="" alt="hello"></img>
-           <h5>youtube</h5>
+           <img src={dvideo} alt="hello"></img>
+           <h5>newtube</h5>
          </div>
          <ul className="navbar-nav px-3">
           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
