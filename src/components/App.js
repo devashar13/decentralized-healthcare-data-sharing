@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import DVideo from '../abis/DVideo.json'
-import Navbar from './Navbar'
+
 import Main from './Main'
 import Web3 from 'web3';
 import './App.css';
-
+import Home from './Home';
+import {Switch, Route} from "react-router-dom";
 //Declare IPFS
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
@@ -119,20 +120,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar 
-          account={this.state.account}
-        />
-        { this.state.loading
-          ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <Main
-              videos={this.state.videos}
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/main" component={Main} videos={this.state.videos}
               uploadVideo={this.uploadVideo}
               captureFile={this.captureFile}
               changeVideo={this.changeVideo}
               currentHash={this.state.currentHash}
-              currentTitle={this.state.currentTitle}
-            />
-        }
+              currentTitle={this.state.currentTitle} />
+        </Switch>
+        
       </div>
     );
   }

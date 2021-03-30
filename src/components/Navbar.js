@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Identicon from "identicon.js";
-import dvideo from "../logo1.png";
-
+import dvideo from "../pics/logo.png";
+import './App.css';
 const Navbar = ({ account }) => {
   return (
     <div className="Navbar">
