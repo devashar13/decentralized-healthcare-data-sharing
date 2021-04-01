@@ -19,7 +19,7 @@ const Navbar = ({ account }) => {
           className="d-inline-block align-top"
           alt=""
         />
-        Decentragram
+        NoStringsAttached
       </a>
       <ul className="navbar-nav px-3">
         <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
