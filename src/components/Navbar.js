@@ -19,12 +19,12 @@ const Navbar = ({ account }) => {
           className="d-inline-block align-top"
           alt=""
         />
-        Decentragram
+        NoStringsAttached
       </a>
       <ul className="navbar-nav px-3">
         <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
           <small className="text-secondary">
-            <small id="account">{"0x0"}</small>
+            <small id="account">{account}</small>
           </small>
           {account ? (
             <img
