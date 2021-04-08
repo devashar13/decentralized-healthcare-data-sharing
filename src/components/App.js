@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Main from "./Main";
 import Web3 from "web3";
+import './App.css'
 import Decentragram from "../abis/Decentragram.json";
 const ipfsClient = require("ipfs-http-client");
 const ipfs = ipfsClient({
@@ -96,7 +97,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="main-screen">
       <Navbar account={account} />
       <div className="container-fluid mt-5">
         <div className="row">
