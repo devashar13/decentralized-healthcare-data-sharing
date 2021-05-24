@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react'
 import {auth} from '../firebase'
 import {toast, ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import {useDispatch} from 'react-redux'
 function RegisterComplete({history}) {
+    const dispatch = useDispatch()
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
 
@@ -29,6 +30,12 @@ function RegisterComplete({history}) {
                 await user.updatePassword(password);
                 const idTokenResult = await user.getIdTokenResult()
                 // redux store
+                dispatch({
+                    type: "LOGGED_IN_USER",
+                    payload: {
+                        email : user.email,
+                        token : idTokenResult,    },
+                });
 
 
 
