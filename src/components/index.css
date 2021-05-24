@@ -1,14 +1,13 @@
 body, html {
-	color: white;
-	background-color: #191927;
-	height: 100vh;
-	width: 100vw;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  background: #f2f2f5;
 }
 
 .content {
-	background-color: #222230;
+	background-color: #f2f2f5;
 	padding: 20px 40px;
 	border-radius: 30px;
 }
@@ -65,13 +64,13 @@ form {
 
 #browse-input-label, .btn-tip{
 	display: inline-block;
-	background-color: rgba(73,89,232,0.2);
-	color: #4959E8;
-	padding: 0.5rem;
+	background-color: #DE5246;
+	color: #f2f2f5;
+	padding: 0.2rem;
 	font-family: sans-serif;
-	border-radius: 10px;
+	border-radius: 20px;
 	cursor: pointer;
-	font-size: 35px;
+	font-size: 25px;
 	width: 200px;
 	text-align: center;
   }
@@ -118,7 +117,7 @@ form {
 }
 
 .card-main, .list-group-item, #imageList, .list-group-flush {
-	background-color: #2f2f43 !important;
+	background-color: #f2f2f5 !important;
 }
 
 .white {
