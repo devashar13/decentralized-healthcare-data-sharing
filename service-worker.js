@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/decentragram/precache-manifest.8565b409854f66ce4a40fc28a5aeeb8a.js"
+  "/designthinking-blockchain/precache-manifest.7405513adbd47874713e6a37c4b40ab7.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/decentragram/index.html", {
+workbox.routing.registerNavigationRoute("/designthinking-blockchain/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
