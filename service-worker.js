@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/devashar13/designthinking-blockchain/tree/new/precache-manifest.fafd924aa23e15072dc7e97ac88b8e4c.js"
+  "/dvideo/precache-manifest.1c78aabfb3f65b77e424db3fe17634be.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/devashar13/designthinking-blockchain/tree/new/index.html", {
+workbox.routing.registerNavigationRoute("/dvideo/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
