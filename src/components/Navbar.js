@@ -3,13 +3,25 @@ import Identicon from "identicon.js";
 import './Navbar.css'
 import photo from "../images/capture2.png"
 import { useHistory } from "react-router-dom";
-
-
+import {useSelector} from "react-redux";
+import firebase from "./firebase"
+import {useDispatch} from "react-redux";
 const Navbar = ({ account }) => {
+  let dispatch = useDispatch()
   let history = useHistory();
   function login(){
       window.location.href="/login"
   }
+  function logout(){
+    firebase.auth().signOut()
+    dispatch({
+      type : "LOGOUT",
+      payload : null,
+
+    });
+    
+}
+  let {user} = useSelector((state) => ({...state}));
   return (
     <nav className="navbar custnav f flex-md-nowrap p-0 ">
       <a
@@ -29,7 +41,12 @@ const Navbar = ({ account }) => {
       <ul className="navbar-nav px-3">
         <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
           <div style={{display:'flex',flexDirection:'column'}}>
-            <button onClick={login}  style={{height:"50px",width:"140px",padding:"0px"}}>Login</button>
+            {!user && (
+              <button onClick={login}  style={{height:"50px",width:"140px",padding:"0px"}}>Login</button>
+            )}
+            {user && (
+              <button onClick={logout}  style={{height:"50px",width:"140px",padding:"0px"}}>Logout</button>
+            )}
           <small className="text-secondary">
             <small id="account">{account}</small>
           </small>
