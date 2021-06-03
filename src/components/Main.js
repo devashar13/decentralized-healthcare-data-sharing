@@ -148,7 +148,7 @@ const Main = ({ captureFile, uploadImage, images, tipImageOwner }) => {
                           style={{ width: '400px' }}
                         ></video>
                       </div>
-                      <p className="white">{image.description}</p>
+                      <p className="black">{image.description}</p>
                     </li>
                     <li key={key} className="list-group-item py-2">
                       <small className="float-left mt-1 text-muted tips-value">

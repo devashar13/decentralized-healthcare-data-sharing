@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import Identicon from "identicon.js";
 import './Navbar.css'
 import photo from "../images/capture2.png"
+import { useHistory } from "react-router-dom";
 
 
 const Navbar = ({ account }) => {
+  let history = useHistory();
+  function login(){
+      window.location.href="/login"
+  }
   return (
     <nav className="navbar custnav f flex-md-nowrap p-0 ">
       <a
         className="navbar-brand col-sm-3 col-md-2 mr-0"
-        href="http://www.dappuniversity.com/bootcamp"
-        target="_blank"
+        href="/"
         rel="noopener noreferrer"
       >
         <img
@@ -24,6 +28,8 @@ const Navbar = ({ account }) => {
       </a>
       <ul className="navbar-nav px-3">
         <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+          <div style={{display:'flex',flexDirection:'column'}}>
+            <button onClick={login}  style={{height:"50px",width:"140px",padding:"0px"}}>Login</button>
           <small className="text-secondary">
             <small id="account">{account}</small>
           </small>
@@ -40,6 +46,8 @@ const Navbar = ({ account }) => {
           ) : (
             <span></span>
           )}
+          </div>
+         
         </li>
       </ul>
     </nav>

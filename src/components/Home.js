@@ -9,6 +9,9 @@ function Home() {
     function handleclick(){
         history.push('/videos');
     }
+    function handleloginclick(){
+      window.location.href="login"
+  }
     return (
         <div>
             <img
@@ -40,7 +43,7 @@ function Home() {
         />
       <h5>DVIDEO</h5>
     </div>
-    <button onClick={handleclick}>Get Started</button>
+    <button onClick={handleloginclick}>Login</button>
   </div>
   <div class="d-flex justify-content-between align-items-end container">
     <div class="d-flex flex-column">
