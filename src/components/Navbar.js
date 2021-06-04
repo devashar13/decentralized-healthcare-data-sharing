@@ -4,7 +4,7 @@ import './Navbar.css'
 import photo from "../images/capture2.png"
 import { useHistory } from "react-router-dom";
 import {useSelector} from "react-redux";
-import firebase from "./firebase"
+import { auth, googleAuthProvider } from "./firebase.js";
 import {useDispatch} from "react-redux";
 const Navbar = ({ account }) => {
   let dispatch = useDispatch()
@@ -13,7 +13,7 @@ const Navbar = ({ account }) => {
       window.location.href="/login"
   }
   function logout(){
-    firebase.auth().signOut()
+    auth.signOut()
     dispatch({
       type : "LOGOUT",
       payload : null,
@@ -52,8 +52,8 @@ const Navbar = ({ account }) => {
           </small>
           {account ? (
             <img
-              className="ml-2"
-              width="30"
+            width="30"
+            className="ml-2"
               height="30"
               src={`data:image/png;base64,${new Identicon(
                 account,

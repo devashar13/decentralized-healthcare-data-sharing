@@ -12,6 +12,7 @@ import "react-h5-audio-player/lib/styles.css";
 
 import mp3Icon from "../images/mp3.svg";
 import "./file-drag.css";
+import { useSelector } from "react-redux";
 // import './player.scss';
 
 const Main = ({ captureFile, uploadImage, images, tipImageOwner }) => {
@@ -22,6 +23,8 @@ const Main = ({ captureFile, uploadImage, images, tipImageOwner }) => {
   const onTargetClick = () => {
     fileInputRef.current.click();
   };
+  let {user} = useSelector((state) => ({...state}));
+
   return (
     <div className="container-fluid mt-5">
         <img
@@ -52,7 +55,12 @@ const Main = ({ captureFile, uploadImage, images, tipImageOwner }) => {
             >
               
               <div className="browse-div">
-                <label htmlFor="browse-input" id="browse-input-label">
+                <label 
+                htmlFor="browse-input" 
+                id="browse-input-label" 
+                style={{backgroundColor:!user&&("#e47268"),cursor:!user&&('auto')}}
+                
+                >
                   Browse
                 </label>
                 <input
@@ -70,6 +78,9 @@ const Main = ({ captureFile, uploadImage, images, tipImageOwner }) => {
                   accept=".mp4,mov"
                   hidden={true}
                   id="browse-input"
+                  disabled={!user && (
+                    true
+                  )}
                 />
               </div>
               <div className="show-files-to-upload">
@@ -151,7 +162,7 @@ const Main = ({ captureFile, uploadImage, images, tipImageOwner }) => {
                       <p className="black">{image.description}</p>
                     </li>
                     <li key={key} className="list-group-item py-2">
-                      <small className="float-left mt-1 text-muted tips-value">
+                      <small className="float-left mt-1 text-muted ">
                         TIPS:{" "}
                         {window.web3.utils.fromWei(
                           image.tipAmount.toString(),

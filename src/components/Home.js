@@ -3,15 +3,32 @@ import dotsLeft from '../pics/dotsLeft.png'
 import dotsright from '../pics/dotsRight.png'
 import photo from '../images/capture2.png'
 import mainPageIllustration from '../pics/mainPageIllustration.png'
+import { auth, googleAuthProvider } from "./firebase.js";
+import {useDispatch} from "react-redux";
 import { Link, useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 function Home() {
     let history = useHistory();
     function handleclick(){
         history.push('/videos');
     }
-    function handleloginclick(){
-      window.location.href="login"
-  }
+
+  function login(){
+    window.location.href="/login"
+}
+function logout(){
+  auth.signOut()
+  dispatch({
+    type : "LOGOUT",
+    payload : null,
+
+  });
+  
+}
+let dispatch = useDispatch()
+
+let {user} = useSelector((state) => ({...state}));
+
     return (
         <div>
             <img
@@ -43,7 +60,12 @@ function Home() {
         />
       <h5>DVIDEO</h5>
     </div>
-    <button onClick={handleloginclick}>Login</button>
+    {!user && (
+              <button onClick={login}  style={{height:"50px",width:"140px",padding:"0px"}}>Login</button>
+            )}
+            {user && (
+              <button onClick={logout}  style={{height:"50px",width:"140px",padding:"0px"}}>Logout</button>
+            )}
   </div>
   <div class="d-flex justify-content-between align-items-end container">
     <div class="d-flex flex-column">
